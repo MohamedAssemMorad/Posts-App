@@ -6,13 +6,13 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <ae.rak.mrak.customviews.CustomTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvSplash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Splash"
-        android:textSize="@dimen/_20sp"
-        app:tv_fontName="@string/bold" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

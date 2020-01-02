@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/llNoInternet"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:gravity="center"
-        android:orientation="vertical">
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llNoInternet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_312dp"
-            android:layout_height="@dimen/_179dp"
-            app:srcCompat="@drawable/ic_no_internet"/>
+        android:layout_width="312dp"
+        android:layout_height="179dp"
+        android:src="@drawable/ic_no_internet" />
 
-    <ae.rak.mrak.customviews.CustomTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/no_connection"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_18sp"
-            android:layout_marginTop="@dimen/_58dp"
-            app:tv_fontName="@string/medium"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:text="@string/no_connection"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <ae.rak.mrak.customviews.CustomTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_connection"
-            android:textColor="@color/content_grey"
-            android:textSize="@dimen/_18sp"
-            android:layout_marginTop="@dimen/_18dp"
-            app:tv_fontName="@string/regular"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/check_connection"
+        android:textColor="@color/content_grey"
+        android:textSize="18sp" />
 
-    <ae.rak.mrak.customviews.CustomTextView
-            android:id="@+id/tvTryAgain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_bg_btn_round_grey"
-            android:text="@string/try_again"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_18sp"
-            android:layout_marginTop="@dimen/_87dp"
-            android:layout_marginStart="@dimen/_16dp"
-            android:layout_marginEnd="@dimen/_16dp"
-            android:gravity="center"
-            android:padding="@dimen/_15dp"
-            app:tv_fontName="@string/regular"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTryAgain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_bg_btn_round_grey"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/try_again"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOfflinePosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_bg_btn_round_grey"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/offline_posts"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,4 @@
+#Thu Jan 02 15:01:34 EET 2020
+base.0=E\:\\work\\posts_app\\Posts-App\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
