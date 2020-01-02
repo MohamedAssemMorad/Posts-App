@@ -13,6 +13,8 @@ import com.example.postsapp.data.source.remote.model.PostsResult
 import com.example.postsapp.presentation.view.adapter.PostsAdapter
 import com.example.postsapp.presentation.viewmodel.PostsViewModel
 import kotlinx.android.synthetic.main.fragment_posts.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PostsFragment : BaseFragment() {
@@ -50,7 +52,11 @@ class PostsFragment : BaseFragment() {
             postsViewModel.callGetPostsLocally().observe(this, Observer {
                 pbLoader.visibility = View.GONE
 
-                if (it != null) {
+                if (it.isNotEmpty()) {
+                    llNoInternet.visibility = View.GONE
+                    contentContainer.visibility = View.VISIBLE
+                    unregisterBroadcasts()
+                    isOnline = false
                     postsList = it as ArrayList<PostsResult>?
                     adapterProcess()
                 } else {
@@ -79,11 +85,9 @@ class PostsFragment : BaseFragment() {
 
                 if (it != null) {
                     postsList = it
-                    AsyncTask.execute {
-                        Runnable {
-                            postsViewModel.callDeletePostsLocally()
-                            postsViewModel.savePosts(postsList!!)
-                        }
+                    GlobalScope.launch {
+                        postsViewModel.callDeletePostsLocally()
+                        postsViewModel.savePosts(postsList!!)
                     }
                     adapterProcess()
                 } else {

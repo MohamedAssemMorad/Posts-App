@@ -59,7 +59,11 @@ open class BaseFragment : Fragment() {
     }
 
     override fun onPause() {
-        unregisterBroadcasts()
+        try {
+            unregisterBroadcasts()
+        } catch (e: IllegalArgumentException) {
+            e.printStackTrace();
+        }
         super.onPause()
     }
 
@@ -78,7 +82,7 @@ open class BaseFragment : Fragment() {
         mContext.registerReceiver(broadcastReceiver, intentFilter)
     }
 
-    private fun unregisterBroadcasts() {
+    fun unregisterBroadcasts() {
         mContext.unregisterReceiver(broadcastReceiver)
     }
 
